@@ -7,12 +7,18 @@ type Props = {
 	children: ComponentChildren;
 };
 
-export default function AddToCartForm({ item, children }: Props) {
-	function addToCart(e: SubmitEvent) {
+ const AddToCartForm = ({ item, children }: Props)=> {
+
+
+	const addToCart = (e: SubmitEvent) => {
 		e.preventDefault();
 		isCartOpen.set(true);
 		addCartItem(item);
 	}
 
 	return <form onSubmit={addToCart}>{children}</form>;
+
+
 }
+
+export default AddToCartForm;
